@@ -7,6 +7,6 @@ class Config:
     FSUB = getenv("FSUB", "REQUSET_ACCEPT_BOT")
     CHID = int(getenv("CHID", "-1001745001470"))
     SUDO = list(map(int, getenv("SUDO", "5531461861 1878911986").split()))
-    MONGO_URI = getenv("MONGO_URI", "mongodb+srv://evatgbottelegram:evatgbottelegram@cluster0.hckeuhb.mongodb.net/?retryWrites=true&w=majority")
+    MONGO_URI = getenv("MONGO_URI", "mongodb+srv://Bastin:Bastin@cluster0.irj81sj.mongodb.net/?retryWrites=true&w=majority")
     
 cfg = Config()

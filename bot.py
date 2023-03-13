@@ -27,7 +27,7 @@ async def approve(_, m : Message):
     try:
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
-        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🎥 JOIN UPDATE CHANNEL 🎥", url="https://t.me/+mtEjHCcc1fIwZDc0")]])
+        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🎥 JOIN OUR GROUP 🎥", url="https://t.me/CINEMA_HUB_GROUP1")]])
         await app.send_photo(kk.id,"https://graph.org/file/5f062464361df13e69755.jpg",f"**Hello {m.from_user.mention}!\nYou Request To Join {m.chat.title} Was Approved.🏻",
         reply_markup=btn)
         add_user(kk.id)
@@ -46,15 +46,15 @@ async def op(_, m :Message):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🗯 Channel", url="https://t.me/Auto_Request_Acceptor_BOT"),
-                        InlineKeyboardButton("💬 Support", url="https://t.me/Auto_Request_Acceptor_BOT")
+                        InlineKeyboardButton("🗯 Channel", url="https://t.me/REQUSET_ACCEPT_BOT"),
+                        InlineKeyboardButton("💬 Support", url="https://t.me/REQUSET_ACCEPT_BOT")
                     ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/@Auto_Request_Acceptor_BOT")
+                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/REQUSET_ACCEPT_BOT")
                     ]
                 ]
             )
             add_user(m.from_user.id)
-            await m.reply_photo("https://telegra.ph/file/f7c587a11397f095a48a1.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @Auto_Request_Acceptor_BOT**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+            await m.reply_photo("https://telegra.ph/file/f7c587a11397f095a48a1.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @REQUSET_ACCEPT_BOT**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
             keyboar = InlineKeyboardMarkup(
@@ -88,15 +88,15 @@ async def chk(_, cb : CallbackQuery):
             keyboard = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("🗯 Channel", url="https://t.me/Auto_Request_Acceptor_BOT"),
-                        InlineKeyboardButton("💬 Support", url="https://t.me/Auto_Request_Acceptor_BOT")
+                        InlineKeyboardButton("🗯 Channel", url="https://t.me/REQUSET_ACCEPT_BOT"),
+                        InlineKeyboardButton("💬 Support", url="https://t.me/REQUSET_ACCEPT_BOT")
                     ],[
-                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/Auto_Request_Acceptor_BOT")
+                        InlineKeyboardButton("➕ Add me to your Chat ➕", url="https://t.me/REQUSET_ACCEPT_BOT")
                     ]
                 ]
             )
             add_user(cb.from_user.id)
-            await cb.message.edit("**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @Auto_Request_Acceptor_BOT**".format(cb.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard, disable_web_page_preview=True)
+            await cb.message.edit("**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @REQUSET_ACCEPT_BOT**".format(cb.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard, disable_web_page_preview=True)
         print(cb.from_user.first_name +" Is started Your Bot!")
     except UserNotParticipant:
         await cb.answer("🙅‍♂️ You are not joined to channel join and try again. 🙅‍♂️")

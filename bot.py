@@ -27,9 +27,16 @@ async def approve(_, m : Message):
     try:
         add_group(m.chat.id)
         await app.approve_chat_join_request(op.id, kk.id)
-        btn = InlineKeyboardMarkup([[InlineKeyboardButton("🎥 JOIN OUR GROUP 🎥", url="https://t.me/CINEMA_HUB_GROUP1")]])
-        await app.send_photo(kk.id,"https://graph.org/file/5f062464361df13e69755.jpg",f"**Hello {m.from_user.mention}!\nYou Request To Join {m.chat.title} Was Approved.🏻",
-        reply_markup=btn)
+        buttons = [[            
+            InlineKeyboardButton("🎥 GROUP 1 🎥", url="https://t.me/CINEMA_HUB_GROUP1"),
+            InlineKeyboardButton("🎥 GROUP 2 🎥", url="https://t.me/CINEMA_HUB_GROUP2")
+            ],[
+            InlineKeyboardButton("🎥 GROUP 3 🎥", url="https://t.me/CINEMA_HUBGROUP3"),
+            InlineKeyboardButton("🎥 NEW MOVIES 🎥", url="https://t.me/CM_HUB_CHANNEL")
+        ]]
+             
+        await app.send_message(kk.id,f"**Hello {m.from_user.mention}!\nYou Request To Join {m.chat.title} Was Approved.🏻",
+        reply_markup = InlineKeyboardMarkup(buttons))
         add_user(kk.id)
     except errors.PeerIdInvalid as e:
         print("user isn't start bot(means group)")
@@ -54,7 +61,7 @@ async def op(_, m :Message):
                 ]
             )
             add_user(m.from_user.id)
-            await m.reply_photo("https://telegra.ph/file/f7c587a11397f095a48a1.jpg", caption="**🦊 Hello {}!\nI'm an auto approve [Admin Join Requests]({}) Bot.\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.\n\n__Powerd By : @REQUSET_ACCEPT_BOT**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
+            await m.reply_text(text="**🦊 Hello {}!\nI'm an auto approve Admin Join Requests Bot..\nI can approve users in Groups/Channels.Add me to your chat and promote me to admin with add members permission.**".format(m.from_user.mention, "https://t.me/telegram/153"), reply_markup=keyboard)
     
         elif m.chat.type == enums.ChatType.GROUP or enums.ChatType.SUPERGROUP:
             keyboar = InlineKeyboardMarkup(
